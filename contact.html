@@ -1,0 +1,74 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Contact — ERIK</title><style>
+:root{
+  --bg:#17100b;--bg2:#20140d;--cream:#f6ead7;--muted:#cbb89d;--line:rgba(246,234,215,.14);
+  --orange:#c96d2d;--gold:#e9ad4b;--yellow:#f4d27c;--card:rgba(255,255,255,.045)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:radial-gradient(circle at 15% 8%,rgba(201,109,45,.12),transparent 28%),radial-gradient(circle at 88% 18%,rgba(233,173,75,.08),transparent 25%),var(--bg);color:var(--cream);font-family:Arial,sans-serif;line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.noise{position:fixed;inset:0;pointer-events:none;z-index:99;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+header{position:fixed;inset:0 0 auto;z-index:50;height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 6vw;background:linear-gradient(to bottom,rgba(23,16,11,.95),transparent);backdrop-filter:blur(8px)}
+.logo{display:flex;align-items:center;gap:11px;font-weight:700;letter-spacing:.14em}
+.logo b{width:36px;height:36px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:linear-gradient(135deg,rgba(201,109,45,.35),rgba(244,210,124,.1))}
+nav{display:flex;gap:27px;color:var(--muted);font-size:14px}
+nav a:hover,.active{color:var(--yellow)}
+main{min-height:100vh}
+.section{width:min(1380px,100%);margin:auto;padding:120px 7vw}
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding-top:120px;position:relative}
+.hero:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(233,173,75,.14),transparent 68%);animation:float 8s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-24px) scale(1.06)}}
+.hero>*{position:relative}
+.eyebrow{font-size:11px;letter-spacing:.21em;color:var(--muted);text-transform:uppercase;margin-bottom:24px}
+h1,h2,h3{font-family:Georgia,serif;line-height:1.05}
+h1{font-size:clamp(54px,9vw,135px);letter-spacing:-.065em;font-weight:500}
+h2{font-size:clamp(40px,6vw,84px);letter-spacing:-.045em;font-weight:500}
+.shimmer{background:linear-gradient(100deg,#d56f31,#efb34d,#ffe18a,#d67a35,#f5cb69);background-size:240% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:240% center}}
+.lead{max-width:700px;margin:28px auto 0;color:var(--muted);font-size:18px}
+.actions{display:flex;justify-content:center;flex-wrap:wrap;gap:13px;margin-top:35px}
+.btn{display:inline-flex;min-height:52px;padding:0 22px;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:999px;font-weight:600;transition:.3s}
+.btn.primary{background:linear-gradient(120deg,var(--yellow),#d98a3e);color:#21140c;border:0}
+.btn:hover{transform:translateY(-3px)}
+.heading{display:flex;gap:14px;padding-bottom:21px;border-bottom:1px solid var(--line);font-size:11px;letter-spacing:.17em;color:var(--muted)}
+.heading b{color:var(--gold)}
+.grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:8vw;padding-top:66px}
+.copy{display:flex;flex-direction:column;gap:21px;color:var(--muted);font-size:18px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:55px}
+.card{min-height:230px;padding:28px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));transition:.35s}
+.card:hover{transform:translateY(-7px);border-color:rgba(244,210,124,.32)}
+.card small{color:var(--gold);letter-spacing:.14em}
+.card h3{font-size:31px;margin-top:54px}
+.card p{color:var(--muted);margin-top:12px}
+.feature{display:grid;grid-template-columns:1fr .9fr;gap:7vw;align-items:center;padding-top:65px}
+.visual{min-height:440px;border-radius:28px;border:1px solid var(--line);display:grid;place-items:center;text-align:center;padding:30px;background:radial-gradient(circle at 50% 25%,rgba(244,210,124,.18),transparent 29%),linear-gradient(145deg,#6c3920,#25150d 72%)}
+.visual strong{font:500 clamp(46px,8vw,100px) Georgia,serif;letter-spacing:-.06em}
+.contact-list{border-top:1px solid var(--line)}
+.contact-list a{display:grid;grid-template-columns:115px 1fr auto;gap:18px;padding:26px 0;border-bottom:1px solid var(--line);align-items:center;transition:.25s}
+.contact-list a:hover{padding-left:12px;color:var(--yellow)}
+.contact-list span{font-size:12px;color:var(--muted)}
+footer{width:min(1380px,100%);margin:auto;padding:29px 7vw;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--muted);font-size:12px}
+.reveal{opacity:0;transform:translateY(26px);transition:.8s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1;transform:none}
+.menu{display:none}
+@media(max-width:850px){nav{position:fixed;inset:0;flex-direction:column;justify-content:center;align-items:center;background:rgba(23,16,11,.98);opacity:0;pointer-events:none;transition:.3s;font-size:28px}.open nav{opacity:1;pointer-events:auto}.menu{display:block;border:0;background:none;color:var(--cream);font-size:24px;z-index:2}.grid2,.feature{grid-template-columns:1fr}.cards{grid-template-columns:1fr}}
+@media(max-width:600px){.section{padding:95px 6vw}.contact-list a{grid-template-columns:1fr auto}.contact-list span{grid-column:1/-1}footer{flex-direction:column;gap:12px}}
+</style></head>
+<body><div class="noise"></div><header><a class="logo" href="index.html"><b>E</b>ERIK</a><button class="menu">☰</button><nav><a class="" href="index.html">Home</a><a class="" href="about.html">About</a><a class="" href="animation.html">Animation</a><a class="" href="academic.html">Academic</a><a class="active" href="contact.html">Contact</a></nav></header><main>
+<section class="section" style="padding-top:170px">
+ <div class="heading reveal"><b>04</b><span>CONTACT</span></div>
+ <div class="grid2">
+  <div class="reveal"><p class="eyebrow">LET'S CONNECT</p><h2>Можно просто <span class="shimmer">написать.</span></h2></div>
+  <div class="contact-list reveal">
+   <a href="tel:+77471118420"><span>Телефон 01</span><b>+7 747 111 84 20</b><i>↗</i></a>
+   <a href="tel:+77064280866"><span>Телефон 02</span><b>+7 706 428 08 66</b><i>↗</i></a>
+   <a target="_blank" href="https://t.me/lnterstel1ar"><span>Telegram</span><b>@lnterstel1ar</b><i>↗</i></a>
+   <a target="_blank" href="https://instagram.com/erik_ibrag1mov"><span>Instagram</span><b>@erik_ibrag1mov</b><i>↗</i></a>
+  </div>
+ </div>
+</section></main>
+<footer><span>ERIK</span><span>© 2026</span><a href="index.html">Home ↑</a></footer><script>
+document.querySelectorAll('.reveal').forEach(el=>new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible')}}),{threshold:.12}).observe(el));
+const m=document.querySelector('.menu'); if(m)m.onclick=()=>document.body.classList.toggle('open');
+document.querySelectorAll('nav a').forEach(a=>a.onclick=()=>document.body.classList.remove('open'));
+</script></body></html>
